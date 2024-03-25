@@ -126,7 +126,7 @@ function asyncNeutralizeVoteThreadDetail() {
     const { threadDetail, authUser } = getState();
     dispatch(NeutralizeVoteThreadDetailActionCreator(authUser.id));
     try {
-      await api.NeutralVoteComment(threadDetail.id);
+      await api.NeutralizeThreadVote(threadDetail.id);
     } catch (error) {
       alert(error.message);
     }

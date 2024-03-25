@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function ThreadInput({ addThread }) {
@@ -26,32 +26,38 @@ export default function ThreadInput({ addThread }) {
   return (
     <form className="thread-input-form" onSubmit={handleSubmit}>
       <div className="thread-input-group">
-        <label htmlFor="title" className="thread-input-label">Judul</label>
+        <label htmlFor="title" className="thread-input-label before:content[' '] after:content[' ']">Judul</label>
         <input
           type="text"
           id="title"
-          className="thread-input-field"
+          placeholder=" "
+          className="peer thread-input-field"
           value={title}
+          required
           onChange={handleTitleChange}
         />
       </div>
       <div className="thread-input-group">
-        <label htmlFor="category" className="thread-input-label">Kategori</label>
+        <label htmlFor="category" className="thread-input-label before:content[' '] after:content[' ']">Kategori</label>
         <input
           type="text"
           id="category"
-          className="thread-input-field"
+          placeholder=" "
+          className="peer thread-input-field"
           value={category}
+          required
           onChange={handleCategoryChange}
         />
       </div>
       <div className="thread-input-group">
-        <label htmlFor="body" className="thread-input-label">Masukkan Ide Kamu</label>
+        <label htmlFor="body" className="thread-input-label before:content[' '] after:content[' ']">Deskripsi</label>
         <textarea
           id="body"
-          className="thread-input-field thread-input-textarea"
+          placeholder=" "
+          className="peer thread-input-field thread-input-textarea"
           rows="4"
           value={body}
+          required
           onChange={handleBodyChange}
         />
       </div>

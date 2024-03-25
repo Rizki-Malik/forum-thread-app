@@ -22,7 +22,9 @@ export default function ThreadDetail({
       <div className="thread-detail-header">
         <span className="thread-category">{category}</span>
         <h2 className="thread-title">{title}</h2>
-        <div className="thread-content" >{parse(body)}</div>
+        <div className="thread-content">
+          <span>{parse(body)}</span>
+        </div>
       </div>
       <div className="thread-detail-actions">
         <VoteButton

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import ThreadsList from '../components/ThreadsList';
 import asyncPopulateUsersAndThreads from '../states/shared/action';
 import {
@@ -8,6 +7,8 @@ import {
   asyncDownVoteThread,
   asyncNeutralizeVoteThread,
 } from '../states/threads/action';
+import AddButton from '../components/AddThreadButton';
+import CategoryFilters from '../utils/CategoryFilters';
 
 function HomePage() {
   const [filter, setFilter] = useState('');
@@ -17,8 +18,6 @@ function HomePage() {
     users = [],
     authUser,
   } = useSelector((states) => states);
-
-  const categories = new Set(threads.map((thread) => thread.category));
 
   useEffect(() => {
     dispatch(asyncPopulateUsersAndThreads());
@@ -44,17 +43,7 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <div className="category-filters">
-        {Array.from(categories).map((category) => (
-          <button
-            key={category}
-            className={filter === category ? 'active' : ''}
-            onClick={() => setFilter('')}
-          >
-            {`#${category}`}
-          </button>
-        ))}
-      </div>
+      <CategoryFilters categories={new Set(threads.map((thread) => thread.category))}  onFilterChange={setFilter} />
 
       <ThreadsList
         threads={
@@ -66,9 +55,8 @@ function HomePage() {
         downVote={onDownVoteThread}
         NeutralizeVote={onNeutralizeVoteThread}
       />
-      <Link to="/new" className="add-button">
-        <span>+</span>
-      </Link>
+
+      <AddButton/>
     </div>
   );
 }

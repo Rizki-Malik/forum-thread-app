@@ -13,9 +13,9 @@ export default function AddThreadPage() {
   };
 
   return (
-    <div className="add-thread-container">
+    <div className="add-thread-page">
       <div className="thread-form">
-        <h2 className="thread-form-header">Buat Thread Baru</h2>
+        <h2 className="thread-form-header">+ New Thread</h2>
         <ThreadInput addThread={onAddThread} />
       </div>
     </div>

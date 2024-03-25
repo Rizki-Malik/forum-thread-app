@@ -29,7 +29,7 @@ export default function ThreadItem({
   return (
     <div className="thread-item">
       <div className="thread-item-header">
-        <div className="thread-category">{category}</div>
+        <div className="thread-category">{`# ${category}`}</div>
         <h2 className="thread-title" onClick={onThreadClick}>{title}</h2>
         <div className="thread-content">{parse(excerpt)}</div>
       </div>
