@@ -12,8 +12,7 @@ describe('Login spec', () => {
     cy.visit('http://localhost:5173');
   });
 
-  it( 'should display login page correctly', function() {
-
+  it('should display login page correctly', function() {
     // verification element that will show in page login
     cy.get('input[title="email"]').should('be.visible');
     cy.get('input[title="password"]').should('be.visible');
