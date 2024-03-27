@@ -25,7 +25,7 @@ export default function Navigation({ authUser, signOut }) {
             height="40"
           />
           <button className="navigation-button" onClick={signOut}>
-            Logout
+            Sign Out
           </button>
         </div>
       </nav>

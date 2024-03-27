@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useInput from '../hooks/useInput'; // Import useInput hook
+import useInput from '../hooks/useInput';
 
 export default function LoginInput({ login }) {
-  // Destructure input value and input change handler from useInput hook
   const [email, setEmail] = useInput('');
   const [password, setPassword] = useInput('');
 
