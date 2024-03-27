@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "e2e": "cypress run",
-    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173 e2e"
+    "ci:test": "vitest --no-watch && start-server-and-test dev http://0.0.0.0:5173 e2e"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
@@ -45,6 +45,7 @@
     "jest": "^29.7.0",
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
+    "start-server-and-test": "^2.0.3",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.6",
     "vitest": "^1.4.0"
