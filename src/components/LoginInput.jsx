@@ -1,33 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import useInput from '../hooks/useInput';
 export default function LoginInput({ login }) {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    login({ email, password });
-  };
+  const [email, setEmail] = useInput('');
+  const [password, setPassword] = useInput('');
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-form">
       <div className="w-72 inline-block justify-center">
         <div className="login-field">
           <input
             className="peer login-input"
             type="email"
+            title="email"
             id="email"
             value={email}
-            onChange={handleEmailChange}
+            onChange={setEmail}
             autoFocus
             placeholder=" " />
           <label
@@ -37,16 +25,17 @@ export default function LoginInput({ login }) {
         <div className="login-field">
           <input
             type="password"
+            title="password"
             id="password"
             className="peer login-input"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={setPassword}
             placeholder=" " />
           <label
             className="login-label before:content[' '] after:content[' ']">Password
           </label>
         </div>
-        <button type="submit" className="login-button">
+        <button type="submit" className="login-button" onClick={() => login({ email, password })}>
           Sign In
         </button>
       </div>

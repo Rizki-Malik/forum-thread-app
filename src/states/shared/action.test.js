@@ -5,8 +5,7 @@
  *  - should dispatch action correctly when data fetching success
  *  - should dispatch action and call alert correctly when data fetching failed
  */
-import { describe } from 'vitest';
-import { asyncPopulateUsersAndThreads } from './action';
+import asyncPopulateUsersAndThreads from './action';
 import { describe, beforeEach, afterEach, it, vi, expect } from 'vitest';
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import { receiveThreadsActionCreator } from '../threads/action';
