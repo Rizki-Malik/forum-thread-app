@@ -18,7 +18,7 @@ export default function SignIn() {
         <h1 className="signin-title">Sign in Forum Apps</h1>
         <LoginInput login={onLogin} />
         <p className="signin-link">
-          Don`t have an account? <Link to="/register" className='underline'>Sign Up</Link>
+          Be part of our community! <Link to="/register" className='underline'>Sign Up</Link>
         </p>
       </main>
     </div>
