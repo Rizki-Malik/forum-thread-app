@@ -58,10 +58,6 @@
         @apply relative w-full mb-5 min-w-[200px] h-10 ;
     }
 
-    .register-button{
-        @apply ml-3 mb-3 bg-cyan-400 p-3 rounded-md hover:bg-cyan-500 hover:text-cyan-100 transition-colors;
-    }
-
     .register-input{
         @apply w-full h-full text-cyan-700 font-sans font-normal outline outline-0 focus:outline-0 bg-blue-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-200 placeholder-shown:border-t-blue-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-200 focus:border-cyan-900;
     }

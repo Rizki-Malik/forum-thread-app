@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useInput from "../hooks/useInput";
+import BRegister from './styled/ButtonRegister';
 
 export default function RegisterInput({ register }) {
   const [name, setName] = useInput('');
@@ -56,9 +57,9 @@ export default function RegisterInput({ register }) {
             Password
           </label>
         </div>
-        <button type="submit" className="register-button" onClick={() => register({ name, email, password })}>
+        <BRegister type="submit" onClick={() => register({ name, email, password })}>
           Sign Up
-        </button>
+        </BRegister>
       </div>
     </form>
   );
